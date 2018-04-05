@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <script type="text/javascript">
+             geotab.addin.iframe = function(api, state) {
+
+
+                return {
+                /*
+                 * Page lifecycle method: initialize is called once when the addin first starts
+                 * Use this function to initialize the addin's state such as default values or
+                 * make API requests (Geotab or external) to ensure interface is ready for the user.
+                 */
+                initialize: function(api, state, callback) {
+                    // Initialize the map
+                  console.log("iframe addin initilaized");
+                    // Must be called to let the app know that we've initialized the addon
+                callback();
+                },
+
+                /*
+                 * Page lifecycle method: focus is called when the page has finished initialize method
+                 * and again when a user leaves and returns to your addin that has already been initialized.
+                 * Use this function to refresh state such as vehicles, zones or exceptions which may have
+                 * been modified since it was first initialized.
+                 */
+                focus: function() {
+                       console.log("iframe addin focus");
+
+                },
+
+                /*
+                 * Page lifecycle method: blur is called when the user is leaving your addin.
+                 * Use this function to save state or commit changes to a datastore or release memory.
+                 */
+                blur: function() {
+                     console.log("iframe addin blurred");
+                }
+             }
+
+
+
+    </script>
+
+</body>
+</html>
